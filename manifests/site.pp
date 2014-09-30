@@ -88,4 +88,38 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+
+ # ------ MH CUSTOMIZATIONS ------- 
+ include dropbox
+ include spotify
+ include evernote
+ include sublime_text
+ include chrome
+ include iterm2::dev
+ include divvy
+ include onepassword
+
+ sublime_text::package { 'Emmet':
+   source => 'sergeche/emmet-sublime'
+ }
+
+ # ensure a gem is installed for all ruby versions
+ ruby_gem { 'bundler for all rubies':
+   gem          => 'bundler',
+   version      => '~> 1.0',
+   ruby_version => '*',
+ }
+
+ # OSX customizations
+ include osx::global::enable_standard_function_keys
+ include osx::global::expand_print_dialog
+ include osx::global::expand_save_dialog
+ include osx::global::tap_to_click
+ include osx::dock::autohide
+ include osx::dock::clear_dock
+ include osx::finder::unhide_library
+ include osx::universal_access::ctrl_mod_zoom
+
+ include iterm2::colors::solarized_dark
+
 }
