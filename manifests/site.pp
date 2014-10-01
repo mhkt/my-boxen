@@ -103,6 +103,9 @@ node default {
  sublime_text::package { 'Emmet':
    source => 'sergeche/emmet-sublime'
  }
+ sublime_text::package { 'Handlebars':
+   source => 'daaain/Handlebars'
+ }
 
  # ensure a gem is installed for all ruby versions
  ruby_gem { 'bundler for all rubies':
