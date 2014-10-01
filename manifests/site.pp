@@ -111,6 +111,10 @@ node default {
    ruby_version => '*',
  }
 
+ package {
+  ['s3cmd']:
+ }
+
  # OSX customizations
  include osx::global::enable_standard_function_keys
  include osx::global::expand_print_dialog
