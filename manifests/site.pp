@@ -99,6 +99,8 @@ node default {
  include divvy
  include onepassword
  include iterm2::dev
+ include skype
+ include java
 
  sublime_text::package { 'Emmet':
    source => 'sergeche/emmet-sublime'
